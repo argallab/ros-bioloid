@@ -53,7 +53,7 @@ void MoveItHandler::planMotion()
 {
     // Call the planner to compute the plan and visualize it.
     // Note that this is just planning, not asking move_group to actually move the robot.
-    bool success = group->plan(plan);
+    bool success = static_cast<bool>(group->plan(plan));
     ROS_INFO("Visualising plan %s", success ? "SUCCESS" : "FAILED");
 }
 
